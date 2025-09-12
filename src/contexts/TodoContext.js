@@ -10,8 +10,13 @@ export const TodoProvider = ({ children }) => {
     dispatch({ type: 'ADD_TODO', payload: text });
   };
 
+  const toggleTodo = (id) => {
+    dispatch({ type: 'TOGGLE_TODO', payload: id });
+  };
+
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, toggleTodo }}>
       {children}
     </TodoContext.Provider>
   );

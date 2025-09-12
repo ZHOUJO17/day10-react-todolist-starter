@@ -17,6 +17,12 @@ const todoReducer = (state, action) => {
                     done: false
                 }
             ];
+        case 'TOGGLE_TODO':
+            return state.map(todo =>
+                todo.id === action.payload
+                    ? { ...todo, done: !todo.done }
+                    : todo
+            );
         default:
             return state;
     }

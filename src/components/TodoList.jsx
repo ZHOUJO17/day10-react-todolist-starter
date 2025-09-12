@@ -3,7 +3,7 @@ import { TodoContext } from '../contexts/TodoContext';
 import './TodoList.css';
 
 const TodoList = () => {
-  const { todos, addTodo} = useContext(TodoContext);
+  const { todos, addTodo, toggleTodo } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
@@ -13,6 +13,12 @@ const TodoList = () => {
       setInputValue('');
     }
   };
+
+  function handleItemClick(id) {
+    toggleTodo(id);
+  }
+
+
 
   return (
     <div className="todo-container">
