@@ -3,7 +3,7 @@ import { TodoContext } from '../contexts/TodoContext';
 import './TodoList.css';
 
 const TodoList = () => {
-  const { todos, addTodo, toggleTodo } = useContext(TodoContext);
+  const { todos, addTodo, toggleTodo, deleteTodo } = useContext(TodoContext);
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (e) => {
@@ -18,7 +18,9 @@ const TodoList = () => {
     toggleTodo(id);
   }
 
-
+  function handleDelete(id) {
+    deleteTodo(id);
+  }
 
   return (
     <div className="todo-container">
@@ -36,6 +38,26 @@ const TodoList = () => {
         <button type="submit" className="add-button">add</button>
       </form>
 
+      {todos.length === 0 ? (<></>) : (
+        <div className="todo-list">
+          {todos.map(({ text, done, id }) => (
+            <div key={id} className="todo-item">
+              <span
+                className={`todo-text ${done ? 'completed' : ''}`}
+                onClick={() => handleItemClick(id)}
+              >
+                {text}
+              </span>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(id)}
+              >
+                X
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
