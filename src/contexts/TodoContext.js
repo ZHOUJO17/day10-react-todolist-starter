@@ -1,4 +1,18 @@
-import {createContext} from "react";
+import React, { createContext, useContext, useReducer } from 'react';
+import todoReducer from '../reducers/todoReducer';
 
-// Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 export const TodoContext = createContext();
+
+export const TodoProvider = ({ children }) => {
+  const [todos, dispatch] = useReducer(todoReducer, []);
+
+  const addTodo = (text) => {
+    dispatch({ type: 'ADD_TODO', payload: text });
+  };
+
+  return (
+    <TodoContext.Provider value={{ todos, addTodo }}>
+      {children}
+    </TodoContext.Provider>
+  );
+};
