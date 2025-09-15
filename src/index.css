@@ -5,9 +5,108 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.ant-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3) !important;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+}
+
+.ant-modal {
+  backdrop-filter: blur(10px);
+}
+
+.ant-modal-content {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.ant-input:focus, .ant-input-focused {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2) !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #667eea !important;
+  border-color: #667eea !important;
+}
+
+.ant-spin-spinning {
+  opacity: 0.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #262626 !important;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .ant-btn {
+    height: 36px !important;
+  }
 }

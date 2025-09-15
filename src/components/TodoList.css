@@ -1,4 +1,102 @@
 .todo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.todo-header-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.todo-card {
+  position: relative;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #1890ff;
+}
+
+.todo-card.completed {
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f4ff 100%);
+  border-color: #52c41a;
+}
+
+.todo-card.completed:hover {
+  border-color: #52c41a;
+}
+
+.ant-modal-content {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ant-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ant-btn:hover {
+  transform: translateY(-2px);
+}
+
+.ant-list-item {
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 0 8px;
+  }
+  
+  .todo-header-card .ant-card-body {
+    padding: 16px;
+  }
+}
+
+.ant-spin-container {
+  transition: all 0.3s ease;
+}
+
+.ant-tag {
+  transition: all 0.3s ease;
+  border-radius: 16px;
+}
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+.ant-input, .ant-input:focus {
+  transition: all 0.3s ease;
+}
+
+.ant-input:focus {
+  transform: scale(1.02);
+}
+
+.todo-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -20,7 +118,7 @@
 .todo-form {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .todo-input {
