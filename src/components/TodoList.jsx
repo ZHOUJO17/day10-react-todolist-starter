@@ -153,7 +153,7 @@ const TodoList = () => {
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <Title level={2} style={{ color: 'white', margin: 0 }}>
+                <Title level={2} className={'custom-title'}>
                   My Todo List
                 </Title>
                 <Text style={{ color: 'rgba(255,255,255,0.8)' }}>
@@ -227,7 +227,7 @@ const TodoList = () => {
                         overflow: 'hidden',
                         transition: 'all 0.3s ease'
                       }}
-                      bodyStyle={{ padding: '20px' }}
+                      bodyStyle={{ padding: '20px'}}
                     >
                       <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                         <div style={{ flex: 1 }}>

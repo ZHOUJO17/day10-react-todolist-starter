@@ -52,7 +52,7 @@ const DonePage = () => {
       >
         <div style={{ textAlign: 'center' }}>
           <TrophyOutlined style={{ fontSize: 48, color: 'white', marginBottom: 16 }} />
-          <Title level={2} style={{ color: 'white', margin: 0 }}>
+          <Title level={2} className={'custom-title'}>
             Completed Tasks
           </Title>
           <Text style={{ color: 'rgba(255,255,255,0.9)', fontSize: 16 }}>

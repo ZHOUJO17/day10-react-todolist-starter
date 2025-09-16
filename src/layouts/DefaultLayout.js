@@ -61,7 +61,7 @@ const DefaultLayout = () => {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <CheckSquareOutlined style={{ fontSize: '24px', color: 'white', marginRight: '12px' }} />
-            <Title level={3} style={{ margin: 0, color: 'white' }}>
+            <Title level={3} style={{ margin: 0, color: 'white'  }} className={'custom-title'}>
               Beautiful TodoList
             </Title>
           </motion.div>
